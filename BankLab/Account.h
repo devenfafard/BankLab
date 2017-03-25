@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "Customer.h"
 
 class Account
@@ -12,6 +13,7 @@ public:
 	Account(Customer customer, int accountNumber);
 	~Account();
 
+	Customer getOwner();
 	void Deposit(int numberOfPennies);
 	void Withdraw(int numberOfPennies);
 	int getBalance();
