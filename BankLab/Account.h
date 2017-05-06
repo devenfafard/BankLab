@@ -16,7 +16,7 @@ public:
 	Customer getOwner();
 	void Deposit(int numberOfPennies);
 	void Withdraw(int numberOfPennies);
+	std::string ShowAccountLog();
 	int getBalance();
 	int getAccountNumber();
 };
-

@@ -8,6 +8,7 @@ void DisplayMenu();
 void TransactMenu();
 void AddAccountMenu();
 void DisplayAccountsMenu();
+void DisplayLog();
 
 int main()
 {
@@ -27,6 +28,7 @@ void DisplayMenu()
 		cout << "1) Add Account" << endl;
 		cout << "2) Transact" << endl;
 		cout << "3) Display accounts" << endl;
+		cout << "4) View account transaction log" << endl;
 		cout << "What would you like to do? " << endl;
 		cin >> choice;
 
@@ -35,11 +37,24 @@ void DisplayMenu()
 		case 1: AddAccountMenu(); break;
 		case 2: TransactMenu(); break;
 		case 3: DisplayAccountsMenu(); break;
+		case 4: DisplayLog(); break;
 		default: break;
 		}
 	}
+}
 
+void DisplayLog()
+{
+	system("cls");
+	cout << "Which Account?" << endl;
+	cout << bank.ListAccounts() << endl;
 
+	int chosenAccount;
+	cin >> chosenAccount;
+
+	Account a = bank.GetAccount(chosenAccount);
+	cout << a.ShowAccountLog();	
+	system("pause");
 }
 
 void AddAccountMenu()
